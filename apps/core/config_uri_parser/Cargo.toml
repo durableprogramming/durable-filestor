@@ -1,0 +1,31 @@
+[package]
+name = "durable-filestor-config-uri-parser"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+durable-filestor-shared = { path = "../../shared" }
+durable-filestor-config-toml-parser = { path = "../config_toml_parser" }
+serde.workspace = true
+serde_json.workspace = true
+serde_yaml = "0.9"
+toml.workspace = true
+clap.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+base64 = "0.22"
+url = "2.4"
+
+[dev-dependencies]
+tempfile = "3.0"
+
+[lib]
+name = "durable_filestor_config_uri_parser"
+path = "src/lib.rs"
+
+[[bin]]
+name = "dfs-config-uri-test-parse"
+path = "src/bin/dfs-config-uri-test-parse.rs"

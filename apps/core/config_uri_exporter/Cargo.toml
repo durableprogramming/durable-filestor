@@ -1,0 +1,31 @@
+[package]
+name = "durable-filestor-config-uri-exporter"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lib]
+name = "durable_filestor_config_uri_exporter"
+path = "src/lib.rs"
+
+[[bin]]
+name = "dfs-config-uri-export"
+path = "src/bin/dfs-config-uri-export.rs"
+
+[dependencies]
+durable-filestor-shared = { path = "../../shared" }
+durable-filestor-uri-parser = { path = "../uri_parser" }
+serde.workspace = true
+serde_json.workspace = true
+toml.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+url = "2.4"
+urlencoding = "2.1"
+clap = { version = "4.0", features = ["derive"] }
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
+proptest = "1.0"

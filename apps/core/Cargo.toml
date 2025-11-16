@@ -1,0 +1,31 @@
+[package]
+name = "durable-filestor-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+durable-filestor-config-toml-parser = { path = "../core/config_toml_parser" }
+durable-filestor-config-uri-parser = { path = "../core/config_uri_parser" }
+durable-filestor-shared = { path = "../shared" }
+durable-filestor-uri-parser = { path = "../core/uri_parser" }
+clap.workspace = true
+tokio.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+serde.workspace = true
+toml.workspace = true
+
+
+[[bin]]
+name = "durable-filestor-core"
+path = "src/main.rs"
+
+[lib]
+name = "durable_filestor_core"
+path = "src/lib.rs"
+crate-type = ["lib", "staticlib"]

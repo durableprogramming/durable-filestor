@@ -1,0 +1,27 @@
+[package]
+name = "durable-filestor-config-toml-parser"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+durable-filestor-shared = { path = "../../shared" }
+serde.workspace = true
+serde_json.workspace = true
+toml.workspace = true
+clap.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+tempfile = "3.0"
+
+[lib]
+name = "durable_filestor_config_toml_parser"
+path = "src/lib.rs"
+
+[[bin]]
+name = "dfs-config-toml-parse"
+path = "src/bin/dfs-config-toml-parse.rs"

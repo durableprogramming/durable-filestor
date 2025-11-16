@@ -1,0 +1,31 @@
+[package]
+name = "durable-filestor-config-toml-exporter"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lib]
+name = "durable_filestor_config_toml_exporter"
+path = "src/lib.rs"
+
+[[bin]]
+name = "dfs-config-toml-export"
+path = "src/bin/dfs-config-toml-export.rs"
+
+[dependencies]
+durable-filestor-shared = { path = "../../shared" }
+serde.workspace = true
+serde_json.workspace = true
+toml.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+clap = { version = "4.0", features = ["derive"] }
+paste = "1.0"
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
+tempfile = "3.0"
+assert_cmd = "2.0"
+predicates = "3.0"

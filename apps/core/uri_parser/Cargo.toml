@@ -1,0 +1,28 @@
+[package]
+name = "durable-filestor-uri-parser"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+durable-filestor-shared = { path = "../../shared" }
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+url = "2.4"
+regex = "1.10"
+urlencoding = "2.1"
+
+[dev-dependencies]
+tempfile = "3.0"
+
+[lib]
+name = "durable_filestor_uri_parser"
+path = "src/lib.rs"
+
+[[bin]]
+name = "dfs-uri-test-parse"
+path = "src/bin/dfs-uri-test-parse.rs"
